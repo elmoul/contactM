@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tous les contacts
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/create">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let contact of contactList | async" routerLink="/detail/{{contact.id}}">
+    <ion-card-header>
+      {{ contact.nom }} {{ contact.prenom }}
+    </ion-card-header>
+    <ion-card-content>
+      Telephone: {{ contact.telephone }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

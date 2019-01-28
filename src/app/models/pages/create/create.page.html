@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<form [formGroup]="createContactForm" (submit)="createContact()">
+    <ion-item>
+      <ion-input formControlName="nom" type="text" 
+        placeholder="Nom ...">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="prenom" type="text" 
+        placeholder="Prénom ...">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="adresse" type="text" 
+        placeholder="Adresse ...">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input formControlName="telephone" type="text" 
+        placeholder="Téléphone ...">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea formControlName="commentaire" type="text" 
+        placeholder="commentaire ...">
+      </ion-textarea>
+    </ion-item>
+
+
+    <ion-button expand="block" type="submit" 
+      [disabled]="!createContactForm.valid">
+      Ajouter contact
+    </ion-button>
+  </form>
+</ion-content>
